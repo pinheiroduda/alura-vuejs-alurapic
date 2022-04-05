@@ -2,7 +2,7 @@
   <div>
     <h1>{{ title }}</h1>
     <ul>
-      <li v-for="photo of photos">
+      <li v-for="photo of photos" :key="photo">
         <img :src="photo.url" :alt="photo.title" />
       </li>
     </ul>
