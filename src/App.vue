@@ -1,8 +1,8 @@
 <template>
-  <div>
-    <h1>{{ title }}</h1>
-    <ul>
-      <li v-for="photo of photos" :key="photo">
+  <div class="body">
+    <h1 class="title">{{ title }}</h1>
+    <ul class="photo-list">
+      <li class="photo-list-item" v-for="photo of photos" :key="photo">
         <img :src="photo.url" :alt="photo.title" />
       </li>
     </ul>
@@ -14,21 +14,35 @@ export default {
   data() {
     return {
       title: "Alurapic",
-      photos: [
-        {
-          url:
-            "https://images.unsplash.com/photo-1471897488648-5eae4ac6686b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHw2fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60",
-          title: "desk"
-        },
-        {
-          url:
-            "https://images.unsplash.com/photo-1649089475838-00ddaabd1c82?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw4fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60",
-          title: "green"
-        }
-      ]
+      photos: []
     };
+  },
+
+  created() {
+    this.$http
+      .get("http://localhost:3000/v1/fotos")
+      .then(res => res.json())
+      .then(photos => (this.photos = photos));
   }
 };
 </script>
 
-<style></style>
+<style>
+.body {
+  font-family: Helvetica, sans-serif;
+  width: 96%;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+}
+
+.photo-list {
+  list-style: none;
+}
+
+.photo-list-item {
+  display: inline-block;
+}
+</style>
