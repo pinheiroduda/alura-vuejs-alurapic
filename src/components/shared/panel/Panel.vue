@@ -18,7 +18,7 @@ export default {
   display: inline-block;
   margin: 5px;
   box-shadow: 5px 5px 10px grey;
-  width: 200px;
+  width: 250px;
   height: 100%;
   vertical-align: top;
   text-align: center;
@@ -28,7 +28,7 @@ export default {
   text-align: center;
   border: solid 2px;
   background: lightblue;
-  margin: 0 0 15px 0;
+  margin: 0;
   text-transform: uppercase;
 }
 
