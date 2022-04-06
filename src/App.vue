@@ -1,6 +1,12 @@
 <template>
   <div class="body">
     <h1 class="title">{{ title }}</h1>
+    <input
+      type="search"
+      class="filter"
+      placeholder="filtre as imagens pelo título"
+      v-on:input="filter = $event.target.value"
+    />
     <ul class="photo-list">
       <li class="photo-list-item" v-for="photo of photos" :key="photo">
         <my-panel :title="photo.titulo">
@@ -22,7 +28,8 @@ export default {
   data() {
     return {
       title: "Alurapic",
-      photos: []
+      photos: [],
+      filter: ""
     };
   },
 
@@ -44,6 +51,11 @@ export default {
 
 .title {
   text-align: center;
+}
+
+.filter {
+  display: block;
+  width: 100%;
 }
 
 .photo-list {
