@@ -1,5 +1,11 @@
 <template>
   <div class="body">
+    <nav>
+      <ul class="menu-list">
+        <li><a href="/" class="menu-list-item">Home</a></li>
+        <li><a href="/register" class="menu-list-item">Cadastro</a></li>
+      </ul>
+    </nav>
     <router-view />
   </div>
 </template>
@@ -13,5 +19,19 @@ export default {};
   font-family: Helvetica, sans-serif;
   width: 96%;
   margin: 0 auto;
+}
+
+.menu-list {
+  width: 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px 0 50px;
+  list-style: none;
+}
+
+.menu-list-item {
+  text-decoration: none;
+  color: black;
 }
 </style>
