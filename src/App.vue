@@ -8,7 +8,7 @@
       v-on:input="filter = $event.target.value"
     />
     <ul class="photo-list">
-      <li class="photo-list-item" v-for="photo of photos" :key="photo">
+      <li class="photo-list-item" v-for="photo of filteredPhotos" :key="photo">
         <my-panel :title="photo.titulo">
           <img class="image" :src="photo.url" :alt="photo.titulo" />
         </my-panel>
@@ -31,6 +31,17 @@ export default {
       photos: [],
       filter: ""
     };
+  },
+
+  computed: {
+    filteredPhotos() {
+      if (this.filter) {
+        let exp = new RegExp(this.filter.trim(), "i");
+        return this.photos.filter(photo => exp.test(photo.titulo));
+      } else {
+        return this.photos;
+      }
+    }
   },
 
   created() {
