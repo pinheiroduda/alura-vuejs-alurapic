@@ -40,6 +40,13 @@ export default {};
 
 .menu-list-item {
   text-decoration: none;
+  background: lightblue;
   color: black;
+  padding: 6px;
+  border-radius: 2px;
+}
+
+.menu-list-item:hover {
+  opacity: 0.9;
 }
 </style>
