@@ -1,9 +1,11 @@
 <template>
   <div class="panel">
     <h2 class="panel-title" @dblclick="visible = !visible">{{ title }}</h2>
-    <div class="panel-content" v-show="visible">
-      <slot></slot>
-    </div>
+    <transition name="fade-panel">
+      <div class="panel-content" v-show="visible">
+        <slot></slot>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -20,6 +22,10 @@ export default {
 </script>
 
 <style scoped>
+* {
+  box-shadow: 5px 5px 5px;
+}
+
 .panel {
   padding: 0 auto;
   border: solid 2px grey;
@@ -40,7 +46,13 @@ export default {
   text-transform: uppercase;
 }
 
-* {
-  box-shadow: 5px 5px 5px;
+.fade-panel-enter,
+.fade-panel-leave-active {
+  opacity: 0;
+}
+
+.fade-panel-enter-active,
+.fade-panel-leave-active {
+  transition: opacity 0.8s;
 }
 </style>
