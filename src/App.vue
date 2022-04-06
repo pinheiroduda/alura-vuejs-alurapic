@@ -10,7 +10,7 @@
     <ul class="photo-list">
       <li class="photo-list-item" v-for="photo of filteredPhotos" :key="photo">
         <my-panel :title="photo.titulo">
-          <img class="image" :src="photo.url" :alt="photo.titulo" />
+          <responsive-image :url="photo.url" :title="photo.title" />
         </my-panel>
       </li>
     </ul>
@@ -19,10 +19,12 @@
 
 <script>
 import Panel from "./components/shared/panel/Panel.vue";
+import ResponsiveImage from "./components/shared/responsive-image/ResponsiveImage.vue";
 
 export default {
   components: {
-    "my-panel": Panel
+    "my-panel": Panel,
+    "responsive-image": ResponsiveImage
   },
 
   data() {
@@ -75,9 +77,5 @@ export default {
 
 .photo-list-item {
   display: inline-block;
-}
-
-.image {
-  width: 100%;
 }
 </style>
