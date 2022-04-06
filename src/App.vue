@@ -2,14 +2,12 @@
   <div class="body">
     <nav>
       <ul class="menu-list">
-        <li>
-          <router-link to="/" class="menu-list-item">
-            Home
-          </router-link>
-        </li>
-        <li>
-          <router-link to="/register" class="menu-list-item">
-            Cadastro
+        <li v-for="route in routes" :key="route">
+          <router-link
+            :to="route.path ? route.path : '/'"
+            class="menu-list-item"
+          >
+            {{ route.title }}
           </router-link>
         </li>
       </ul>
@@ -19,7 +17,15 @@
 </template>
 
 <script>
-export default {};
+import { routes } from "./routes";
+
+export default {
+  data() {
+    return {
+      routes: routes
+    };
+  }
+};
 </script>
 
 <style>
