@@ -11,7 +11,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .panel {
   padding: 0 auto;
   border: solid 2px grey;
