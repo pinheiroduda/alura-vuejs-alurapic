@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import Panel from "./components/shared/panel/Painel.vue";
+import Panel from "./components/shared/panel/Panel.vue";
 
 export default {
   components: {
