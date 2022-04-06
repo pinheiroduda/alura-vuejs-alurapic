@@ -31,4 +31,8 @@ export default {
   margin: 0 0 15px 0;
   text-transform: uppercase;
 }
+
+* {
+  box-shadow: 5px 5px 5px;
+}
 </style>
