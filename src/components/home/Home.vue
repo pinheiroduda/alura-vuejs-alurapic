@@ -11,6 +11,7 @@
       <li class="photo-list-item" v-for="photo of filteredPhotos" :key="photo">
         <my-panel :title="photo.titulo">
           <responsive-image :url="photo.url" :title="photo.title" />
+          <my-button type="button" label="Remover" />
         </my-panel>
       </li>
     </ul>
@@ -20,11 +21,13 @@
 <script>
 import Panel from "../shared/panel/Panel.vue";
 import ResponsiveImage from "../shared/responsive-image/ResponsiveImage.vue";
+import Button from "../shared/button/Button.vue";
 
 export default {
   components: {
     "my-panel": Panel,
-    "responsive-image": ResponsiveImage
+    "responsive-image": ResponsiveImage,
+    "my-button": Button
   },
 
   data() {
