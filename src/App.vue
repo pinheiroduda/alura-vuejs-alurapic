@@ -12,7 +12,9 @@
         </li>
       </ul>
     </nav>
-    <router-view />
+    <transition name="page">
+      <router-view />
+    </transition>
   </div>
 </template>
 
@@ -54,5 +56,15 @@ export default {
 
 .menu-list-item:hover {
   opacity: 0.9;
+}
+
+.page-enter,
+.page-leave-active {
+  opacity: 0;
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.3s;
 }
 </style>
