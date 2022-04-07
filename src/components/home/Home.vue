@@ -15,7 +15,7 @@
             type="button"
             label="Remover"
             @activeButton="remove(photo)"
-            :confirm="true"
+            :confirmation="true"
             style="default"
           />
         </my-panel>
