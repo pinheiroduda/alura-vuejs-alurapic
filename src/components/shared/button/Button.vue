@@ -1,12 +1,42 @@
 <template>
-  <button class="button error-button" :type="type">
+  <button
+    @click="triggerAction()"
+    class="button"
+    :class="buttonStyle"
+    :type="type"
+  >
     {{ label }}
   </button>
 </template>
 
 <script>
 export default {
-  props: ["type", "label"]
+  props: ["type", "label", "confirm", "style"],
+
+  methods: {
+    triggerAction() {
+      if (this.confirm) {
+        if (confirm("Confirma operação?")) {
+          this.$emit("activeButton");
+        }
+        return;
+      }
+      this.$emit("activeButton");
+    }
+  },
+
+  computed: {
+    buttonStyle() {
+      let buttonStyle;
+      if (this.style == "default" || !this.style) {
+        buttonStyle = "default-button";
+      }
+      if (this.style == "danger") {
+        buttonStyle = "danger-button";
+      }
+      return buttonStyle;
+    }
+  }
 };
 </script>
 
@@ -19,7 +49,12 @@ export default {
   font-size: 1.2em;
 }
 
-.error-button {
+.default-button {
+  background: lightblue;
+  color: white;
+}
+
+.danger-button {
   background: firebrick;
   color: white;
 }
