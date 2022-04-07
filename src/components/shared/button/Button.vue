@@ -13,6 +13,19 @@
 export default {
   props: ["type", "label", "confirm", "style"],
 
+  props: {
+    type: {
+      required: true,
+      type: String
+    },
+    label: {
+      required: true,
+      type: String
+    },
+    confirm: Boolean,
+    style: String
+  },
+
   methods: {
     triggerAction() {
       if (this.confirm) {
