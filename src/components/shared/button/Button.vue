@@ -11,8 +11,6 @@
 
 <script>
 export default {
-  props: ["type", "label", "confirm", "style"],
-
   props: {
     type: {
       required: true,
@@ -28,7 +26,7 @@ export default {
 
   methods: {
     triggerAction() {
-      if (this.confirm) {
+      if (this.confirmation) {
         if (confirm("Confirma operação?")) {
           this.$emit("activeButton");
         }
@@ -40,20 +38,14 @@ export default {
 
   computed: {
     buttonStyle() {
-      let buttonStyle;
-      if (this.style == "default" || !this.style) {
-        buttonStyle = "default-button";
-      }
-      if (this.style == "danger") {
-        buttonStyle = "danger-button";
-      }
-      return buttonStyle;
+      if (this.style == "default" || !this.style) return "default-button";
+      if (this.style == "danger") return "danger-button";
     }
   }
 };
 </script>
 
-<style scoped>
+<style>
 .button {
   display: inline-block;
   padding: 10px;
