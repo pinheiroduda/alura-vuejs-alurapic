@@ -3,7 +3,7 @@
     <h1 class="centered">Cadastro</h1>
     <h2 class="centered"></h2>
 
-    <form @submit="record()">
+    <form @submit.prevent="record()">
       <div class="control">
         <label for="title">TÍTULO</label>
         <input
