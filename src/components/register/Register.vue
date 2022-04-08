@@ -10,6 +10,7 @@
           id="title"
           autocomplete="off"
           @input="photo.title = $event.target.value"
+          :value="photo.title"
         />
       </div>
 
@@ -19,6 +20,7 @@
           id="url"
           autocomplete="off"
           @input="photo.url = $event.target.value"
+          :value="photo.url"
         />
         <responsive-image />
       </div>
@@ -29,6 +31,7 @@
           id="description"
           autocomplete="off"
           @input="photo.description = $event.target.value"
+          :value="photo.description"
         ></textarea>
       </div>
 
@@ -56,7 +59,7 @@ export default {
     return {
       photo: {
         title: "",
-        utl: "",
+        url: "",
         description: ""
       }
     };
