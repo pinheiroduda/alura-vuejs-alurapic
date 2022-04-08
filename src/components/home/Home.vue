@@ -11,7 +11,7 @@
       <li class="photo-list-item" v-for="photo of filteredPhotos" :key="photo">
         <my-panel :title="photo.titulo">
           <responsive-image
-            v-my-transform.animate.reverse="45"
+            v-my-transform:scale.animate="1.2"
             :url="photo.url"
             :title="photo.title"
           />
