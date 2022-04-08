@@ -3,21 +3,33 @@
     <h1 class="centered">Cadastro</h1>
     <h2 class="centered"></h2>
 
-    <form>
+    <form @submit="record()">
       <div class="control">
         <label for="title">TÍTULO</label>
-        <input id="title" autocomplete="off" />
+        <input
+          id="title"
+          autocomplete="off"
+          @input="photo.title = $event.target.value"
+        />
       </div>
 
       <div class="control">
         <label for="url">URL</label>
-        <input id="url" autocomplete="off" />
+        <input
+          id="url"
+          autocomplete="off"
+          @input="photo.url = $event.target.value"
+        />
         <responsive-image />
       </div>
 
       <div class="control">
         <label for="description">DESCRIÇÃO</label>
-        <textarea id="description" autocomplete="off"></textarea>
+        <textarea
+          id="description"
+          autocomplete="off"
+          @input="photo.description = $event.target.value"
+        ></textarea>
       </div>
 
       <div class="centered">
@@ -38,6 +50,22 @@ export default {
   components: {
     "responsive-image": ResponsiveImage,
     "my-button": Button
+  },
+
+  data() {
+    return {
+      photo: {
+        title: "",
+        utl: "",
+        description: ""
+      }
+    };
+  },
+
+  methods: {
+    record() {
+      console.log(this.photo);
+    }
   }
 };
 </script>
