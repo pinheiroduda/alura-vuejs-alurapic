@@ -20,7 +20,7 @@
             label="Remover"
             @activeButton="remove(photo)"
             :confirmation="true"
-            style="default"
+            buttonColor="default"
           />
         </my-panel>
       </li>

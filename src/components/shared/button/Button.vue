@@ -21,7 +21,7 @@ export default {
       type: String
     },
     confirm: Boolean,
-    style: String
+    buttonColor: String
   },
 
   methods: {
@@ -38,8 +38,9 @@ export default {
 
   computed: {
     buttonStyle() {
-      if (this.style == "default" || !this.style) return "default-button";
-      if (this.style == "danger") return "danger-button";
+      if (this.buttonColor == "default" || !this.buttonColor)
+        return "default-button";
+      if (this.buttonColor == "danger") return "danger-button";
     }
   }
 };
