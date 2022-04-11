@@ -60,7 +60,12 @@ export default {
   methods: {
     record() {
       this.service.register(this.photo).then(
-        () => (this.photo = new Photo()),
+        () => {
+          if (this.id) {
+            this.$router.push({ name: "home" });
+          }
+          this.photo = new Photo();
+        },
         err => console.log(err)
       );
     }
