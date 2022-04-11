@@ -1,6 +1,6 @@
 <template>
   <div class="panel">
-    <h2 class="panel-title" @dblclick="visible = !visible">{{ title }}</h2>
+    <h2 class="panel-titulo" @dblclick="visible = !visible">{{ titulo }}</h2>
     <transition name="fade-panel">
       <div class="panel-content" v-show="visible">
         <slot></slot>
@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  props: ["title"],
+  props: ["titulo"],
 
   data() {
     return {
@@ -38,7 +38,7 @@ export default {
   text-align: center;
 }
 
-.panel .panel-title {
+.panel .panel-titulo {
   text-align: center;
   border: solid 2px;
   background: lightblue;

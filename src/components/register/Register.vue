@@ -1,12 +1,12 @@
 <template>
   <div>
     <h1 class="centered">Cadastro</h1>
-    <h2 class="centered"></h2>
+    <h2 class="centered">{{ photo.titulo }}</h2>
 
     <form @submit.prevent="record()">
       <div class="control">
-        <label for="title">TÍTULO</label>
-        <input id="title" autocomplete="off" v-model.lazy="photo.title" />
+        <label for="titulo">TÍTULO</label>
+        <input id="titulo" autocomplete="off" v-model.lazy="photo.titulo" />
       </div>
 
       <div class="control">
@@ -15,7 +15,7 @@
         <responsive-image
           v-show="photo.url"
           :url="photo.url"
-          :title="photo.title"
+          :titulo="photo.titulo"
         />
       </div>
 

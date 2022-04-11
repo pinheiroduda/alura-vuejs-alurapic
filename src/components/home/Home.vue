@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="title">{{ title }}</h1>
+    <h1 class="titulo">{{ titulo }}</h1>
     <input
       type="search"
       class="filter"
@@ -13,11 +13,11 @@
         v-for="(photo, index) of filteredPhotos"
         :key="index"
       >
-        <my-panel :title="photo.titulo">
+        <my-panel :titulo="photo.titulo">
           <responsive-image
             v-my-transform:scale.animate="1.2"
             :url="photo.url"
-            :title="photo.title"
+            :titulo="photo.titulo"
           />
           <my-button
             type="button"
@@ -46,7 +46,7 @@ export default {
 
   data() {
     return {
-      title: "Alurapic",
+      titulo: "Alurapic",
       photos: [],
       filter: ""
     };
@@ -79,7 +79,7 @@ export default {
 </script>
 
 <style>
-.title {
+.titulo {
   text-align: center;
 }
 

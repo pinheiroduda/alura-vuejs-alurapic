@@ -3,7 +3,7 @@
     <ul class="menu-list">
       <li v-for="(route, index) in routes" :key="index">
         <router-link :to="route.path ? route.path : '/'" class="menu-list-item">
-          {{ route.title }}
+          {{ route.titulo }}
         </router-link>
       </li>
     </ul>

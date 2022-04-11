@@ -1,6 +1,6 @@
 export default class Photo {
-  constructor(title = "", url = "", description = "") {
-    this.title = title;
+  constructor(titulo = "", url = "", description = "") {
+    this.titulo = titulo;
     this.url = url;
     this.description = description;
   }
