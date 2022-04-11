@@ -89,7 +89,12 @@ export default {
   created() {
     this.service = new PhotoService(this.$resource);
 
-    this.service.list().then(photos => (this.photos = photos));
+    this.service.list().then(
+      photos => (this.photos = photos),
+      err => {
+        this.message = err.message;
+      }
+    );
   }
 };
 </script>
