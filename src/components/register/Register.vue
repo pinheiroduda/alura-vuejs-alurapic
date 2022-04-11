@@ -6,22 +6,12 @@
     <form @submit.prevent="record()">
       <div class="control">
         <label for="title">TÍTULO</label>
-        <input
-          id="title"
-          autocomplete="off"
-          @input="photo.title = $event.target.value"
-          :value="photo.title"
-        />
+        <input id="title" autocomplete="off" v-model="photo.title" />
       </div>
 
       <div class="control">
         <label for="url">URL</label>
-        <input
-          id="url"
-          autocomplete="off"
-          @input="photo.url = $event.target.value"
-          :value="photo.url"
-        />
+        <input id="url" autocomplete="off" v-model="photo.url" />
         <responsive-image />
       </div>
 
@@ -30,8 +20,7 @@
         <textarea
           id="description"
           autocomplete="off"
-          @input="photo.description = $event.target.value"
-          :value="photo.description"
+          v-model="photo.description"
         ></textarea>
       </div>
 
