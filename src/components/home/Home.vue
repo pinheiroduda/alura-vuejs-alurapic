@@ -20,6 +20,11 @@
             :url="photo.url"
             :titulo="photo.titulo"
           />
+          <router-link
+            :to="{ name: 'update-register', params: { id: photo._id } }"
+          >
+            <my-button type="button" label="Alterar" />
+          </router-link>
           <my-button
             type="button"
             label="Remover"

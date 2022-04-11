@@ -10,5 +10,12 @@ export const routes = [
     titulo: "Register",
     menu: true
   },
+  {
+    path: "/register/:id",
+    name: "update-register",
+    component: Register,
+    titulo: "Register",
+    menu: false
+  },
   { path: "*", component: Home, menu: false }
 ];
