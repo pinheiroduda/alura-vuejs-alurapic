@@ -80,7 +80,7 @@ export default {
           this.message = "Foto removida com sucesso";
         },
         err => {
-          this.message = "Não foi possível remover a foto";
+          this.message = err.message;
         }
       );
     }

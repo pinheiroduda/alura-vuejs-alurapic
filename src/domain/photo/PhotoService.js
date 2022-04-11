@@ -22,7 +22,10 @@ export default class PhotoService {
   }
 
   delete(id) {
-    return this._resource.delete({ id });
+    return this._resource.delete({ id }).then(null, err => {
+      console.log(err);
+      throw new Error("Não foi possível remover a foto.");
+    });
   }
 
   search(id) {
