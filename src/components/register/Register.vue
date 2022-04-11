@@ -57,7 +57,7 @@ export default {
 
   methods: {
     record() {
-      this.$http.post("http://localhost:3000/v1/fotos", this.photo).then(
+      this.$http.post("v1/fotos", this.photo).then(
         () => (this.photo = new Photo()),
         err => console.log(err)
       );

@@ -67,7 +67,7 @@ export default {
 
   methods: {
     remove(photo) {
-      this.$http.delete(`http://localhost:3000/v1/fotos/${photo._id}`).then(
+      this.$http.delete(`v1/fotos/${photo._id}`).then(
         () => {
           let index = this.photos.indexOf(photo);
           this.photos.splice(index, 1);
@@ -83,7 +83,7 @@ export default {
 
   created() {
     this.$http
-      .get("http://localhost:3000/v1/fotos")
+      .get("v1/fotos")
       .then(res => res.json())
       .then(photos => (this.photos = photos));
   }
