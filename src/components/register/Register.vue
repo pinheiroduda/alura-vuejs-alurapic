@@ -67,7 +67,11 @@ export default {
 
   methods: {
     record() {
-      console.log(this.photo);
+      this.photo = {
+        title: "",
+        url: "",
+        description: ""
+      };
     }
   }
 };
