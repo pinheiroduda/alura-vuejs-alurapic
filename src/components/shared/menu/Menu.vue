@@ -23,20 +23,19 @@ export default {
 
 <style scoped>
 .menu-list {
-  width: 8%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 50px;
+  justify-content: flex-end;
+  padding: 10px 20px;
+  background: lightblue;
+  border-radius: 2px;
   list-style: none;
 }
 
 .menu-list-item {
   text-decoration: none;
-  background: lightblue;
   color: black;
   padding: 6px;
-  border-radius: 2px;
 }
 
 .menu-list-item:hover {
