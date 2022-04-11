@@ -8,7 +8,11 @@ export default class PhotoService {
   }
 
   register(photo) {
-    return this._resource.save(photo);
+    if (photo._id) {
+      return this._resource.update({ id: photo._id }, photo);
+    } else {
+      return this._resource.save(photo);
+    }
   }
 
   delete(id) {
