@@ -6,13 +6,13 @@
     <form @submit.prevent="record()">
       <div class="control">
         <label for="title">TÍTULO</label>
-        <input id="title" autocomplete="off" v-model="photo.title" />
+        <input id="title" autocomplete="off" v-model.lazy="photo.title" />
       </div>
 
       <div class="control">
         <label for="url">URL</label>
-        <input id="url" autocomplete="off" v-model="photo.url" />
-        <responsive-image />
+        <input id="url" autocomplete="off" v-model.lazy="photo.url" />
+        <responsive-image :url="photo.url" :title="photo.title" />
       </div>
 
       <div class="control">
