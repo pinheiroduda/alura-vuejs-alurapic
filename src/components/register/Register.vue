@@ -30,7 +30,7 @@
 
       <div class="centered">
         <my-button label="GRAVAR" type="submit" />
-        <router-link to="/">
+        <router-link :to="{ name: 'home' }">
           <my-button label="VOLTAR" type="button" />
         </router-link>
       </div>
