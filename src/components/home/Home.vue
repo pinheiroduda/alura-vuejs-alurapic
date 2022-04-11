@@ -37,6 +37,7 @@
 import Panel from "../shared/panel/Panel.vue";
 import ResponsiveImage from "../shared/responsive-image/ResponsiveImage.vue";
 import Button from "../shared/button/Button.vue";
+import PhotoService from "../../domain/photo/PhotoService";
 
 export default {
   components: {
@@ -67,14 +68,13 @@ export default {
 
   methods: {
     remove(photo) {
-      this.$http.delete(`v1/fotos/${photo._id}`).then(
+      this.service.delete(photo._id).then(
         () => {
           let index = this.photos.indexOf(photo);
           this.photos.splice(index, 1);
           this.message = "Foto removida com sucesso";
         },
         err => {
-          console.log(err);
           this.message = "Não foi possível remover a foto";
         }
       );
@@ -82,10 +82,9 @@ export default {
   },
 
   created() {
-    this.$http
-      .get("v1/fotos")
-      .then(res => res.json())
-      .then(photos => (this.photos = photos));
+    this.service = new PhotoService(this.$resource);
+
+    this.service.list().then(photos => (this.photos = photos));
   }
 };
 </script>
