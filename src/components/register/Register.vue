@@ -12,7 +12,11 @@
       <div class="control">
         <label for="url">URL</label>
         <input id="url" autocomplete="off" v-model.lazy="photo.url" />
-        <responsive-image :url="photo.url" :title="photo.title" />
+        <responsive-image
+          v-show="photo.url"
+          :url="photo.url"
+          :title="photo.title"
+        />
       </div>
 
       <div class="control">
