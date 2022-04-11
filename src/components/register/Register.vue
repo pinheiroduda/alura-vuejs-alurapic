@@ -3,6 +3,9 @@
     <h1 class="centered">Cadastro</h1>
     <h2 class="centered">{{ photo.titulo }}</h2>
 
+    <h2 v-if="photo._id" class="centered">Alterando...</h2>
+    <h2 v-else class="centered">Incluindo...</h2>
+
     <form @submit.prevent="record()">
       <div class="control">
         <label for="titulo">TÍTULO</label>
